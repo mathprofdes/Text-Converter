@@ -33,4 +33,4 @@ The Text Converter is a simple text and numeric manipulation application that al
 
 **Screenshot**
 
-![Screenshot of program.](/Version_1_1_1/ScheduleCardCreatorPython.png)
+![Screenshot of program.](/Version_1_1_1/TextConverterOverview.png)
