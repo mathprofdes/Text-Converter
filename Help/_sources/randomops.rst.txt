@@ -1,0 +1,17 @@
+Random Menu
+===========
+
+* **Uniform Integer Range...**: This will produce a list of pseudo-random integers, between a user-selected lower bound and upper bound, inclusive. Numbers are generated using Python's built-in random number generator. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, and the lower and upper bounds for the output. The seed option has a button that will allow the user to use the current time from the system clock. The output is a list of pseudo-random numbers in the specified range.
+
+* **Uniform Float Range...**: This will produce a list of pseudo-random floats, between a user-selected lower bound and upper bound, inclusive. Numbers are generated using Python's built-in random number generator. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, and the lower and upper bounds for the output. The seed option has a button that will allow the user to use the current time from the system clock. The output is a list of pseudo-random numbers in the specified range.
+
+* **Binomial Distribution...**: This will produce a list of pseudo-random integers from a binomial distribution. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, the number of trials for each value and the probability of a success. The seed option has a button that will allow the user to use the current time from the system clock. The output is the number of successes for each trial run.
+
+* **Normal Distribution...**: This will produce a list of pseudo-random floats from a normal distribution. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, mu and sigma. The seed option has a button that will allow the user to use the current time from the system clock.
+
+* **Log Normal Distribution...**: This will produce a list of pseudo-random floats from a log normal distribution. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, mu and sigma. The seed option has a button that will allow the user to use the current time from the system clock.
+
+* **Exponential Distribution...**: This will produce a list of pseudo-random floats from an exponential distribution. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, and lambda. The seed option has a button that will allow the user to use the current time from the system clock.
+
+* **Blum-Blum-Shub Bit Generator...**: This will produce a list of random bit sequences using the Blum-Blum-Shub (BBS) algorithm. A dialog box will open allowing the user to select the number of numbers to produce, the length of each bit sequence, the seed (starting point) of the generator, and the two primes p and q. The seed option has a button that will allow the user to use a random seed that is relatively prime to p*q. In the BBS algorithm the modulus for the system is the product of two large primes p and q that are both congruent to 3 mod 4. The inputs for p and q each have is prime and next prime buttons that will check if the input value is prime and congruent to 3 mod 4 or find the next prime congruent to 3 mod 4. The output is a list of pseudo-random bit sequences of the user specified length.
+

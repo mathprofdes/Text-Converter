@@ -1,0 +1,19 @@
+Edit Menu
+=========
+
+* **Cut**: Removes selected text and copies it to the system clipboard.
+
+* **Copy**: Copies selected text to the system clipboard.
+
+* **Copy All**: Copies the entire document to the system clipboard.
+
+* **Paste**: Pastes current clipboard text into the editor at the current cursor position.
+
+* **Select All**: Selects all text in the editor.
+
+* **Undo**: Undoes the last change in the editor.
+
+* **Redo**: Redoes the last undo.
+
+* **Toggle Word Wrap**: Toggles the editor's word wrap state.
+

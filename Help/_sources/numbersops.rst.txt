@@ -1,0 +1,35 @@
+Numbers Menu
+============
+
+* **Decimal -> Binary**: Converts decimal numbers to binary.
+
+* **Decimal -> Octal**: Converts decimal numbers to octal.
+
+* **Decimal -> Hexadecimal**: Converts decimal numbers to hexadecimal.
+
+* **Binary -> Decimal**: Converts binary numbers to decimal.
+
+* **Binary -> Octal**: Converts binary numbers to octal.
+
+* **Binary -> Hexadecimal**: Converts binary numbers to hexadecimal.
+
+* **Octal -> Decimal**: Converts octal numbers to decimal.
+
+* **Octal -> Binary**: Converts octal numbers to binary.
+
+* **Octal -> Hexadecimal**: Converts octal numbers to hexadecimal.
+
+* **Hexadecimal -> Decimal**: Converts hexadecimal numbers to decimal.
+
+* **Hexadecimal -> Binary**: Converts hexadecimal numbers to binary.
+
+* **Hexadecimal -> Octal**: Converts hexadecimal numbers to octal.
+
+* **General Base Conversion...**: Allows the user to select the base conversion by inputting the original and target bases. Bases are restricted to be between 2 and 36, as with hexadecimal representation the a, b, c, d, e, f, sequence is continued with g, h, i, ... for bases that exceed 16.
+
+* **Remove Leading Zeros**: Removes leading zeros from numbers.
+
+* **Remove Leading Zeros with Minimum Length...**: Removes leading zeros from numbers but allows the user to select a minimum length of the resulting number. For example, with the value 00001101, if the user selects a minimum length of 5 the result will be 01101.
+
+* **Pad with Zeros...**: Pads the beginning of each number with zeros up to a maximum length that is specified by the user. For example, if the number is 42 and the user selects a length of 5 the result will be 00042. Likewise, if the user selects a length of 2 (or 0 or 1) the result will be 42.
+

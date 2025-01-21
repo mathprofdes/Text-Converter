@@ -1,0 +1,11 @@
+Code Menu
+=========
+
+* **Remove C++/Java Style Comments**: Removes standard single line `//` and multi-line `/* */` comments from the code.
+
+* **Convert to C++ Code String**: Converts each line to a C++ style string that can be directly assigned to a string variable.
+
+* **Condense**: Removes comments, blank lines, and ending whitespace.
+
+* **Condense & Convert to C++ Code String**: Removes comments, blank lines, and ending whitespace, then converts each line to a C++ style string.
+
