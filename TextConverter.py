@@ -62,7 +62,7 @@ class TextConverter(QMainWindow):
         self.initializeUI(filetoload)
         self.setMinimumSize(QSize(700, 300))
         self.setGeometry(100, 100, 700, 500)
-        icon = QIcon(self.resource_path("ProgramIcon.png"))
+        icon = QIcon(self.resource_path("Help/ProgramIcon.png"))
         self.setWindowIcon(icon)
         self.show()
 
@@ -114,7 +114,7 @@ class TextConverter(QMainWindow):
 
         self.SelectTheme_act = QAction("Select Theme...", self)
         self.SelectTheme_act.triggered.connect(self.SelectTheme)
-        self.ResetHighlightColor_act.setStatusTip('Select from the current supported system themes.')
+        self.SelectTheme_act.setStatusTip('Select from the current supported system themes.')
 
         options_menu.addAction(self.FontBold_act)
         options_menu.addAction(self.FontItalic_act)
