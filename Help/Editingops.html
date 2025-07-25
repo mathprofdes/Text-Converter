@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Editing Options &#8212; Text Editor &amp; Converter 1.3.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=dde075ca" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=bb516dca"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Editingops';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Text Editor &amp; Converter User’s Guide" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 25, 2025  -  09:38 AM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ProgramIcon.png" class="logo__image only-light" alt="Text Editor & Converter 1.3.1 documentation - Home"/>
+    <img src="_static/ProgramIcon.png" class="logo__image only-dark pst-js-only" alt="Text Editor & Converter 1.3.1 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Editing Options
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/Text-Converter" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Editing Options
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/Text-Converter" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Editing Options</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="editing-options">
+<h1>Editing Options<a class="headerlink" href="#editing-options" title="Link to this heading">#</a></h1>
+<section id="file-menu">
+<h2>File Menu<a class="headerlink" href="#file-menu" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>New</strong>: Clears the editing area.  The text that is currently in the editing area is stored in the undo/redo history and hence can be retrieved with an undo.</p></li>
+<li><p><strong>Open/Insert</strong>: Opens an Open dialog box for loading a text file into the editing area.  The loaded file is inserted at the current cursor position and any text in the editing area is not removed. As with the New option, the current text is stored in the undo/redo history and hence can be retrieved with an undo.</p></li>
+<li><p><strong>Save as</strong>: Opens a Save as dialog box for saving the current document to a text file. Note that there is not a straight Save option. This was intentional in the design, we did not want the program to make it easy to overwrite a loaded file.</p></li>
+<li><p><strong>Print</strong>: Opens a Print dialog box for printing the current document to the selected printer.</p></li>
+<li><p><strong>Print Preview</strong>: Opens a Print Preview dialog box for viewing the printed page layout, option changes and can invoke the printing of the current document to the selected printer.</p></li>
+<li><p><strong>Statistics</strong>: Displays a small dialog box with the character, non-space character, and word counts.</p></li>
+<li><p><strong>Open a New Editor Window</strong>: Opens a new copy of the Text Editor &amp; Converter application.</p></li>
+<li><p><strong>Exit</strong>: Closes the program. There is no exit catch if there is an unsaved edit.</p></li>
+</ul>
+</section>
+<section id="edit-menu">
+<h2>Edit Menu<a class="headerlink" href="#edit-menu" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Cut</strong>: Removes selected text and copies it to the system clipboard.</p></li>
+<li><p><strong>Copy</strong>: Copies selected text to the system clipboard.</p></li>
+<li><p><strong>Copy All</strong>: Copies the entire document to the system clipboard.</p></li>
+<li><p><strong>Paste</strong>: Pastes current clipboard text into the editor at the current cursor position.</p></li>
+<li><p><strong>Select All</strong>: Selects all text in the editor.</p></li>
+<li><p><strong>Undo</strong>: Undoes the last change in the editor.</p></li>
+<li><p><strong>Redo</strong>: Redoes the last undo.</p></li>
+<li><p><strong>Toggle Word Wrap</strong>: Toggles the editor’s word wrap state.</p></li>
+</ul>
+</section>
+<section id="strings-menu">
+<h2>Strings Menu<a class="headerlink" href="#strings-menu" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>UPPERCASE</strong>: Converts the entire editor text to uppercase.</p></li>
+<li><p><strong>lowercase</strong>: Converts the entire editor text to lowercase.</p></li>
+<li><p><strong>Capitalize</strong>: Capitalizes each word in the editor.</p></li>
+<li><p><strong>Remove All Whitespace</strong>: Removes all whitespace characters from the editor text, including whitespace between non-whitespace characters.</p></li>
+<li><p><strong>Whitespace to Single Spaces</strong>: Replaces all whitespace character sequences with a single space character.</p></li>
+<li><p><strong>Remove Whitespace Per Line</strong>: Removes all whitespace characters from the editor text, including whitespace between non-whitespace characters line by line.</p></li>
+<li><p><strong>Remove Punctuation</strong>: Removes all punctuation characters from the editor text.</p></li>
+<li><p><strong>Remove Numbers</strong>: Removes all numeric characters from the editor text.</p></li>
+<li><p><strong>Remove All Non-Letters</strong>: Removes all characters that are not alphabetic characters.</p></li>
+<li><p><strong>Split (Spaces to Line Breaks)</strong>: Converts all spaces to line breaks.</p></li>
+<li><p><strong>Join (Line Breaks to Spaces)</strong>: Converts all line breaks to spaces.</p></li>
+<li><p><strong>Remove Blank Lines</strong>: Removes all blank lines from the editor text.</p></li>
+<li><p><strong>Remove Multiple Blank Lines</strong>: Converts multiple blank lines to a single blank line.</p></li>
+<li><p><strong>Remove Front Whitespace</strong>: Removes whitespace characters from the beginning of each line. Any whitespace characters at the end of the line or between non-whitespace characters are not removed.</p></li>
+<li><p><strong>Remove End Whitespace</strong>: Removes whitespace characters from the end of each line. Any whitespace characters at the beginning of the line or between non-whitespace characters are not removed.</p></li>
+<li><p><strong>Trim Lines</strong>: Removes whitespace characters from the beginning and end of each line. Any whitespace characters between non-whitespace characters are not removed.</p></li>
+<li><p><strong>Convert Tabs to Spaces</strong>: Replaces all tab characters with the desired (selected in the submenu) number of spaces (1-5).</p></li>
+<li><p><strong>Convert Spaces to Tabs</strong>: Replaces all space characters with a tab character.</p></li>
+<li><p><strong>Replace All</strong>: Brings up a dialog box allowing the user to input target and replacement strings and will replace all occurrences of the target with the replacement. The replacement is done in a case sensitive manner.</p></li>
+<li><p><strong>Split At</strong>: Brings up a dialog box allowing the user to input a string that will be used for splitting the editor text. The string that is split over is removed from the text and replaced with line breaks.</p></li>
+<li><p><strong>Break Character Stream</strong>: Brings up a dialog box allowing the user to select the number of characters for each line and places a line break after each block of characters of this length. There is also an option for preserving words that will put the break after the word the fills the block. So in if this option is selected there may be lines longer than the block size selected.</p></li>
+<li><p><strong>Reformat Text</strong>: Brings up a dialog box allowing the user to select the maximum number of characters for each line and places a line break after each block of characters of this length. This automatically preserves words when possible.</p></li>
+</ul>
+</section>
+<section id="characters-menu">
+<h2>Characters Menu<a class="headerlink" href="#characters-menu" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>A-Z -&gt; 1-26</strong>: Codes characters A-Z as 1-26. Lowercase characters are converted to uppercase before coding and all other characters are ignored. For example, <code class="docutils literal notranslate"><span class="pre">abcde,</span> <span class="pre">fgh</span></code> is coded as <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span> <span class="pre">7</span> <span class="pre">8</span></code>.</p></li>
+<li><p><strong>A-Z -&gt; 01-26</strong>: Codes characters A-Z as 01-26. Lowercase characters are converted to uppercase before coding and all other characters are ignored. For example, <code class="docutils literal notranslate"><span class="pre">abcde,</span> <span class="pre">fgh</span></code> is coded as <code class="docutils literal notranslate"><span class="pre">01</span> <span class="pre">02</span> <span class="pre">03</span> <span class="pre">04</span> <span class="pre">05</span> <span class="pre">06</span> <span class="pre">07</span> <span class="pre">08</span></code>.</p></li>
+<li><p><strong>A-Z -&gt; 0-25</strong>: Codes characters A-Z as 1-26. Lowercase characters are converted to uppercase before coding and all other characters are ignored. For example, <code class="docutils literal notranslate"><span class="pre">abcde,</span> <span class="pre">fgh</span></code> is coded as <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span> <span class="pre">7</span></code>.</p></li>
+<li><p><strong>A-Z -&gt; 00-25</strong>: Codes characters A-Z as 01-26. Lowercase characters are converted to uppercase before coding and all other characters are ignored. For example, <code class="docutils literal notranslate"><span class="pre">abcde,</span> <span class="pre">fgh</span></code> is coded as <code class="docutils literal notranslate"><span class="pre">00</span> <span class="pre">01</span> <span class="pre">02</span> <span class="pre">03</span> <span class="pre">04</span> <span class="pre">05</span> <span class="pre">06</span> <span class="pre">07</span></code>.</p></li>
+<li><p><strong>A-Z -&gt; 1-26 Binary</strong>: Codes characters A-Z as 1-26 and output is in binary form. Lowercase characters are converted to uppercase before coding and all other characters are ignored. For example, <code class="docutils literal notranslate"><span class="pre">abcde,</span> <span class="pre">fgh</span></code> is coded as <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">10</span> <span class="pre">11</span> <span class="pre">100</span> <span class="pre">101</span> <span class="pre">110</span> <span class="pre">111</span> <span class="pre">1000</span></code>.</p></li>
+<li><p><strong>A-Z -&gt; 0-25 Binary</strong>: Codes characters A-Z as 0-25 and output is in binary form. Lowercase characters are converted to uppercase before coding and all other characters are ignored. For example, <code class="docutils literal notranslate"><span class="pre">abcde,</span> <span class="pre">fgh</span></code> is coded as <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">1</span> <span class="pre">10</span> <span class="pre">11</span> <span class="pre">100</span> <span class="pre">101</span> <span class="pre">110</span> <span class="pre">111</span></code>.</p></li>
+<li><p><strong>A-Z -&gt; 1-26 8-Bit Binary</strong>: Codes characters A-Z as 1-26 and output is in 8-bit binary form. Lowercase characters are converted to uppercase before coding and all other characters are ignored. For example, <code class="docutils literal notranslate"><span class="pre">abcde,</span> <span class="pre">fgh</span></code> is coded as <code class="docutils literal notranslate"><span class="pre">00000001</span> <span class="pre">00000010</span> <span class="pre">00000011</span> <span class="pre">00000100</span> <span class="pre">00000101</span> <span class="pre">00000110</span> <span class="pre">00000111</span> <span class="pre">00001000</span></code>.</p></li>
+<li><p><strong>A-Z -&gt; 0-25 8-Bit Binary</strong>: Codes characters A-Z as 0-25 and output is in 8-bit binary form. Lowercase characters are converted to uppercase before coding and all other characters are ignored. For example, <code class="docutils literal notranslate"><span class="pre">abcde,</span> <span class="pre">fgh</span></code> is coded as <code class="docutils literal notranslate"><span class="pre">00000000</span> <span class="pre">00000001</span> <span class="pre">00000010</span> <span class="pre">00000011</span> <span class="pre">00000100</span> <span class="pre">00000101</span> <span class="pre">00000110</span> <span class="pre">00000111</span></code>.</p></li>
+<li><p><strong>Text -&gt; ASCII</strong>: Codes each character to its ASCII value. The input is assumed to be keyboard characters within the ASCII table.</p></li>
+<li><p><strong>Text -&gt; ASCII: 3 Digits</strong>: Codes each character to its ASCII value using 3 digits for each number, padding the beginning with zeros if needed.</p></li>
+<li><p><strong>Text -&gt; ASCII: Binary</strong>: Codes each character to its ASCII value and returns the binary representation of the number.</p></li>
+<li><p><strong>Text -&gt; ASCII: 8-Bit Binary</strong>: Codes each character to its ASCII value and returns the 8-Bit binary representation of the number.</p></li>
+<li><p><strong>1-26 -&gt; A-Z</strong>: Converts the 1-26 numeric coding back to A-Z.</p></li>
+<li><p><strong>0-25 -&gt; A-Z</strong>: Converts the 0-25 numeric coding back to A-Z.</p></li>
+<li><p><strong>1-26 Binary -&gt; A-Z</strong>: Converts the binary 1-26 numeric coding back to A-Z.</p></li>
+<li><p><strong>0-25 Binary -&gt; A-Z</strong>: Converts the binary 0-25 numeric coding back to A-Z.</p></li>
+<li><p><strong>ASCII -&gt; Text</strong>: Converts the ASCII value coding back to text. It assumes that each number is between 0 and 255.</p></li>
+<li><p><strong>ASCII Binary -&gt; Text</strong>: Converts the binary ASCII value coding back to text. It assumes that each number is between 0 and 255.</p></li>
+</ul>
+</section>
+<section id="numbers-menu">
+<h2>Numbers Menu<a class="headerlink" href="#numbers-menu" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Decimal -&gt; Binary</strong>: Converts decimal numbers to binary.</p></li>
+<li><p><strong>Decimal -&gt; Octal</strong>: Converts decimal numbers to octal.</p></li>
+<li><p><strong>Decimal -&gt; Hexadecimal</strong>: Converts decimal numbers to hexadecimal.</p></li>
+<li><p><strong>Binary -&gt; Decimal</strong>: Converts binary numbers to decimal.</p></li>
+<li><p><strong>Binary -&gt; Octal</strong>: Converts binary numbers to octal.</p></li>
+<li><p><strong>Binary -&gt; Hexadecimal</strong>: Converts binary numbers to hexadecimal.</p></li>
+<li><p><strong>Octal -&gt; Decimal</strong>: Converts octal numbers to decimal.</p></li>
+<li><p><strong>Octal -&gt; Binary</strong>: Converts octal numbers to binary.</p></li>
+<li><p><strong>Octal -&gt; Hexadecimal</strong>: Converts octal numbers to hexadecimal.</p></li>
+<li><p><strong>Hexadecimal -&gt; Decimal</strong>: Converts hexadecimal numbers to decimal.</p></li>
+<li><p><strong>Hexadecimal -&gt; Binary</strong>: Converts hexadecimal numbers to binary.</p></li>
+<li><p><strong>Hexadecimal -&gt; Octal</strong>: Converts hexadecimal numbers to octal.</p></li>
+<li><p><strong>General Base Conversion…</strong>: Allows the user to select the base conversion by inputting the original and target bases. Bases are restricted to be between 2 and 36, as with hexadecimal representation the a, b, c, d, e, f, sequence is continued with g, h, i, … for bases that exceed 16.</p></li>
+<li><p><strong>Remove Leading Zeros</strong>: Removes leading zeros from numbers.</p></li>
+<li><p><strong>Remove Leading Zeros with Minimum Length…</strong>: Removes leading zeros from numbers but allows the user to select a minimum length of the resulting number. For example, with the value 00001101, if the user selects a minimum length of 5 the result will be 01101.</p></li>
+<li><p><strong>Pad with Zeros…</strong>: Pads the beginning of each number with zeros up to a maximum length that is specified by the user. For example, if the number is 42 and the user selects a length of 5 the result will be 00042. Likewise, if the user selects a length of 2 (or 0 or 1) the result will be 42.</p></li>
+</ul>
+</section>
+<section id="random-menu">
+<h2>Random Menu<a class="headerlink" href="#random-menu" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Uniform Integer Range…</strong>: This will produce a list of pseudo-random integers, between a user-selected lower bound and upper bound, inclusive. Numbers are generated using Python’s built-in random number generator. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, and the lower and upper bounds for the output. The seed option has a button that will allow the user to use the current time from the system clock. The output is a list of pseudo-random numbers in the specified range.</p></li>
+<li><p><strong>Uniform Float Range…</strong>: This will produce a list of pseudo-random floats, between a user-selected lower bound and upper bound, inclusive. Numbers are generated using Python’s built-in random number generator. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, and the lower and upper bounds for the output. The seed option has a button that will allow the user to use the current time from the system clock. The output is a list of pseudo-random numbers in the specified range.</p></li>
+<li><p><strong>Binomial Distribution…</strong>: This will produce a list of pseudo-random integers from a binomial distribution. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, the number of trials for each value and the probability of a success. The seed option has a button that will allow the user to use the current time from the system clock. The output is the number of successes for each trial run.</p></li>
+<li><p><strong>Normal Distribution…</strong>: This will produce a list of pseudo-random floats from a normal distribution. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, mu and sigma. The seed option has a button that will allow the user to use the current time from the system clock.</p></li>
+<li><p><strong>Log Normal Distribution…</strong>: This will produce a list of pseudo-random floats from a log normal distribution. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, mu and sigma. The seed option has a button that will allow the user to use the current time from the system clock.</p></li>
+<li><p><strong>Exponential Distribution…</strong>: This will produce a list of pseudo-random floats from an exponential distribution. A dialog box will open allowing the user to select the number of numbers to produce, the seed (starting point) of the generator, and lambda. The seed option has a button that will allow the user to use the current time from the system clock.</p></li>
+<li><p><strong>Blum-Blum-Shub Bit Generator…</strong>: This will produce a list of random bit sequences using the Blum-Blum-Shub (BBS) algorithm. A dialog box will open allowing the user to select the number of numbers to produce, the length of each bit sequence, the seed (starting point) of the generator, and the two primes p and q. The seed option has a button that will allow the user to use a random seed that is relatively prime to p*q. In the BBS algorithm the modulus for the system is the product of two large primes p and q that are both congruent to 3 mod 4. The inputs for p and q each have is prime and next prime buttons that will check if the input value is prime and congruent to 3 mod 4 or find the next prime congruent to 3 mod 4. The output is a list of pseudo-random bit sequences of the user specified length.</p></li>
+</ul>
+</section>
+<section id="code-menu">
+<h2>Code Menu<a class="headerlink" href="#code-menu" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Remove C++/Java Style Comments</strong>: Removes standard single line <cite>//</cite> and multi-line <cite>/* */</cite> comments from the code.</p></li>
+<li><p><strong>Convert to C++ Code String</strong>: Converts each line to a C++ style string that can be directly assigned to a string variable.</p></li>
+<li><p><strong>Condense</strong>: Removes comments, blank lines, and ending whitespace.</p></li>
+<li><p><strong>Condense &amp; Convert to C++ Code String</strong>: Removes comments, blank lines, and ending whitespace, then converts each line to a C++ style string.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Text Editor &amp; Converter User’s Guide</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-menu">File Menu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-menu">Edit Menu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-menu">Strings Menu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characters-menu">Characters Menu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers-menu">Numbers Menu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-menu">Random Menu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-menu">Code Menu</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 25, 2025  -  09:38 AM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

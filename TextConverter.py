@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created: 7/20/2024
-Revised: 7/20/2024
+Revised: 6/15/2025
 
 @author: Don Spickler
 
@@ -31,12 +31,12 @@ os.environ['QT_MAC_WANTS_LAYER'] = '1'
 
 class TextConverter(QMainWindow):
 
-    def __init__(self, title="Text Converter"):
+    def __init__(self, parent = None, title="Text Editor & Converter", filetoload = ''):
         super().__init__()
         # About information for the app.
         self.authors = "Don Spickler"
-        self.version = "1.2.1"
-        self.program_title = "Text Converter"
+        self.version = "1.3.1"
+        self.program_title = "Text Editor & Converter"
         self.copyright = "2025"
 
         self.licence = "\nThis software is distributed under the GNU General Public License version 3.\n\n" + \
@@ -47,71 +47,97 @@ class TextConverter(QMainWindow):
                        "PARTICULAR PURPOSE. See the GNU General Public License for more details http://www.gnu.org/licenses/."
 
         self.setWindowTitle(self.program_title)
-        self.initializeUI()
+        self.programList = []
+        self.Parent = parent
+
+        self.currentTheme = ''
+        self.Platform = platform.system()
+        styles = QStyleFactory.keys()
+        if "Fusion" in styles:
+            app.setStyle('Fusion')
+            self.currentTheme = 'Fusion'
+        else:
+            self.currentTheme = styles[0]
+
+        self.initializeUI(filetoload)
         self.setMinimumSize(QSize(700, 300))
         self.setGeometry(100, 100, 700, 500)
-        icon = QIcon(self.resource_path("icons/gnome-run.png"))
+        icon = QIcon(self.resource_path("ProgramIcon.png"))
         self.setWindowIcon(icon)
         self.show()
 
-    def initializeUI(self):
+    def initializeUI(self, filetoload = ''):
         self.inputpane = InputPane(False, "", False, False, True, True)
         self.setCentralWidget(self.inputpane)
 
-        # Add Icons to existing menu options
-        self.inputpane.file_new_act.setIcon(QIcon(self.resource_path("icons/FileNew.png")))
-        self.inputpane.file_open_act.setIcon(QIcon(self.resource_path("icons/FileOpen.png")))
-        self.inputpane.file_saveas_act.setIcon(QIcon(self.resource_path("icons/FileSave.png")))
-        self.inputpane.file_print_act.setIcon(QIcon(self.resource_path("icons/print.png")))
-        self.inputpane.file_PrintPreview_act.setIcon(QIcon(self.resource_path("icons/preview.png")))
-        self.inputpane.edit_cut_act.setIcon(QIcon(self.resource_path("icons/Delete.png")))
-        self.inputpane.edit_copy_act.setIcon(QIcon(self.resource_path("icons/copy.png")))
-        self.inputpane.edit_paste_act.setIcon(QIcon(self.resource_path("icons/paste.png")))
-        self.inputpane.edit_undo_act.setIcon(QIcon(self.resource_path("icons/Undo.png")))
-        self.inputpane.edit_redo_act.setIcon(QIcon(self.resource_path("icons/Redo.png")))
+        self.inputpane.file_menu.addSeparator()
+        self.newEditorWindow_act = QAction("Open a New Editor Window...", self)
+        self.newEditorWindow_act.triggered.connect(self.onNewWindow)
+        self.newEditorWindow_act.setStatusTip('Open a new editor window.')
+        self.inputpane.file_menu.addAction(self.newEditorWindow_act)
 
         self.inputpane.file_menu.addSeparator()
-
         self.exit_act = QAction("Exit", self)
         self.exit_act.triggered.connect(self.onExit)
+        self.exit_act.setStatusTip('Quit the program.')
         self.inputpane.file_menu.addAction(self.exit_act)
 
         # Additional Menu Options
         options_menu = self.inputpane.menu.addMenu("Options")
         self.ResetFont_act = QAction("Reset Font", self)
+        self.ResetFont_act.setStatusTip('Reset the font to the default.')
         self.ResetFont_act.triggered.connect(self.onResetFont)
 
         self.FontBold_act = QAction("Toggle Bold", self)
         self.FontBold_act.triggered.connect(self.onFontBold)
+        self.FontBold_act.setStatusTip('Toggle the font bold setting.')
 
         self.FontItalic_act = QAction("Toggle Italic", self)
         self.FontItalic_act.triggered.connect(self.onFontItalic)
+        self.FontItalic_act.setStatusTip('Toggle the font italic setting.')
 
         self.FontSize_act = QAction("Font Size...", self)
         self.FontSize_act.triggered.connect(self.onFontSize)
+        self.FontSize_act.setStatusTip('Set the font size.')
 
         self.SelectFont_act = QAction("Select Font...", self)
         self.SelectFont_act.triggered.connect(self.onSelectFont)
+        self.SelectFont_act.setStatusTip('Select a the editor font.')
+
+        self.SelectHighlightColor_act = QAction("Select Line Highlight Color...", self)
+        self.SelectHighlightColor_act.triggered.connect(self.setHighlightColor)
+        self.SelectHighlightColor_act.setStatusTip('Select a the editor line highlight color.')
+
+        self.ResetHighlightColor_act = QAction("Reset Line Highlight Color", self)
+        self.ResetHighlightColor_act.triggered.connect(self.resetHighlightColor)
+        self.ResetHighlightColor_act.setStatusTip('Reset a the editor line highlight color to the default color.')
+
+        self.SelectTheme_act = QAction("Select Theme...", self)
+        self.SelectTheme_act.triggered.connect(self.SelectTheme)
+        self.ResetHighlightColor_act.setStatusTip('Select from the current supported system themes.')
 
         options_menu.addAction(self.FontBold_act)
         options_menu.addAction(self.FontItalic_act)
         options_menu.addAction(self.FontSize_act)
-        options_menu.addSeparator()
         options_menu.addAction(self.SelectFont_act)
-        options_menu.addSeparator()
         options_menu.addAction(self.ResetFont_act)
+        options_menu.addSeparator()
+        options_menu.addAction(self.SelectHighlightColor_act)
+        options_menu.addAction(self.ResetHighlightColor_act)
+        options_menu.addSeparator()
+        options_menu.addAction(self.SelectTheme_act)
 
         ###  Help Menu
         help_menu = self.inputpane.menu.addMenu("Help")
 
         self.help_act = QAction("Help...", self)
-        self.help_act.setIcon(QIcon(self.resource_path("icons/Help2.png")))
         self.help_act.triggered.connect(self.onHelp)
+        self.help_act.setStatusTip('Help with ' + self.program_title + " Version " + self.version + "...")
         help_menu.addAction(self.help_act)
 
         self.help_about_act = QAction("About...", self)
-        self.help_about_act.setIcon(QIcon(self.resource_path("icons/About.png")))
         self.help_about_act.triggered.connect(self.aboutDialog)
+        self.help_about_act.setStatusTip('About ' + self.program_title)
         help_menu.addAction(self.help_about_act)
 
         try:
@@ -121,8 +147,24 @@ class TextConverter(QMainWindow):
                 optList.fromList(filecontents)
                 doc = self.inputpane.editor.document()
                 doc.setDefaultFont(optList.Font)
+                self.inputpane.editor.setHighlightLineColor(optList.highlightColor)
+                self.Parent.setStyle(optList.theme)
+                self.currentTheme = optList.theme
+        except Exception as e:
+            pass
+
+        self.setStatusBar(QStatusBar(self))
+
+        try:
+            if filetoload != '':
+                f = open(filetoload, 'r')
+                self.inputpane.editor.insertPlainText(f.read())
         except:
             pass
+
+    def onNewWindow(self):
+        self.newwindow = TextConverter()
+        self.programList.append(self.newwindow)
 
     def onExit(self):
         self.close()
@@ -177,6 +219,19 @@ class TextConverter(QMainWindow):
             doc.setDefaultFont(font)
             self.saveOptions()
 
+    def SelectTheme(self):
+        items = QStyleFactory.keys()
+        if len(items) <= 1:
+            return
+
+        items.sort()
+        item, ok = QInputDialog.getItem(self, "Select Theme", "Available Themes", items, 0, False)
+
+        if ok:
+            self.Parent.setStyle(item)
+            self.currentTheme = item
+            self.saveOptions()
+
     def resource_path(self, relative_path):
         if hasattr(sys, '_MEIPASS'):
             return os.path.join(sys._MEIPASS, relative_path)
@@ -191,11 +246,29 @@ class TextConverter(QMainWindow):
                           self.licence
                           )
 
+    def resetHighlightColor(self):
+        self.inputpane.editor.resetHighlightLineColor()
+        self.saveOptions()
+        self.inputpane.editor.highlight_current_line()
+
+    def setHighlightColor(self):
+        doc = self.inputpane.editor.document()
+        col = self.inputpane.editor.highlight_line_color
+        colordialog = QColorDialog(col)
+        if colordialog.exec():
+            col = colordialog.currentColor()
+            self.inputpane.editor.setHighlightLineColor(col)
+            self.saveOptions()
+            self.inputpane.editor.highlight_current_line()
+
     def saveOptions(self):
         opts = GeneralOptions()
         doc = self.inputpane.editor.document()
         font = doc.defaultFont()
+        hlcolor = self.inputpane.editor.highlight_line_color
         opts.Font = font
+        opts.highlightColor = hlcolor
+        opts.theme = self.currentTheme
         optlist = opts.toList()
         with open('TextConverterOptions.opt', 'wb') as f:
             try:
@@ -209,43 +282,13 @@ class TextConverter(QMainWindow):
         self.url_home_string = "file://" + self.resource_path("Help/index.html")
         webbrowser.open(self.url_home_string)
 
-    def closeEvent(self, event):
-        pass
-        # count = 0
-        # for i in range(len(self.WindowList)):
-        #     if self.WindowList[i].isVisible():
-        #         count += 1
-        #
-        # if count > 0:
-        #     close = QMessageBox.warning(self, "Exit Program",
-        #                                      "All open windows will be closed and current states lost.  " +
-        #                                      "Are you sure want to exit the program?",
-        #                                      QMessageBox.Yes | QMessageBox.No)
-        #     if close == QMessageBox.Yes:
-        #         event.accept()
-        #         for i in range(len(self.WindowList)):
-        #             self.WindowList[i].close()
-        #     else:
-        #         event.ignore()
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = TextConverter(app)
+    fileload = ''
+    if (len(sys.argv) > 1):
+        fileload = sys.argv[1]
+
+    window = TextConverter(app, filetoload = fileload)
     progcss = appcss()
     app.setStyleSheet(progcss.getCSS())
-
-    # Load file parameter if one is given.
-    # if len(sys.argv) > 1:
-    #     window.openFile(sys.argv[1])
-
-    # plat = platform.system()
-    # styles = QStyleFactory.keys()
-    #
-    # if (plat == "Windows") and ("Windows" in styles):
-    #     app.setStyle('Windows')
-    # if (plat == "Darwin") and ("Windows" in styles):
-    #     app.setStyle('Windows')
-
-    # sys.exit(app.exec_())
     sys.exit(app.exec())
