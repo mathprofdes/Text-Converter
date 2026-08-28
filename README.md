@@ -53,7 +53,7 @@ To create an executable for your system, make the PyCharm project as above. Then
 
 
 **Notes:** 
-- For Linux and MacOS users, depending on how your system is set up, you may be able to simply double-click the TextConverter.py file from your file browser instead of running this from the terminal.
+
 - A png file of a program icon **[ProgramIcon.png](https://github.com/mathprofdes/Text-Converter/releases/download/v1.3.1/ProgramIcon.png)** is included if you wish to use it for a shortcut to the program.
 
 ---
